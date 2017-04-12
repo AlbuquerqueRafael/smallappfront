@@ -13,7 +13,9 @@ export class UserComponent{
               private userService: UserService) { }
 
   message = undefined;
-
+  username: any;
+  password: any;
+  
   public login(username, password) {
 
     this.userService.login(username, password).subscribe(data => {
