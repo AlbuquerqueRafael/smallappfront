@@ -1,0 +1,27 @@
+<div class="panel panel-primary smallapp-form">
+	<div class="panel-heading"><h4 align="center"> SmallApp - Login</h4></div>
+	<div class="panel-body">
+		<div *ngIf="message"class="alert alert-danger" >
+ 	 			<button type="button" class="close" (click)="message=undefined">&times;</button>
+  			 		{{message}}
+		</div>
+
+		<form name="myform" class="form padding-login-form">
+	 		  <div class="input-group info-login-group-margin">
+	   		  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+	    		<input name="email" type="text" class="form-control" id="email" placeholder="Email" [(ngModel)]="username" required>
+	  		</div>
+
+	 		  <div class="input-group info-login-group-margin">
+	  			<span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+	   		  <input name="psw" type="password" class="form-control" id="pwd" placeholder="Password" [(ngModel)]="password" required>
+	  		</div>
+
+	 		<div class="text-right info-login-group-margin">
+	  			<button [disabled]="!username || !password"
+	  					   (click)="login(username, password)" class="info-login-button-widht btn-primary btn">Login</button>
+
+			</div>
+		</form>
+	</div>
+</div>
